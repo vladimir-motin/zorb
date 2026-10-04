@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#12171e"><title>G-Energy ЗОРБ — пиксельная аркада</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head>
+<body>
+<main class="arcade">
+  <header class="masthead"><a href="./" aria-label="G-Energy ЗОРБ, главная">G-ENERGY <span>ЗОРБ</span></a><span class="edition">01 / CITY RUN <i></i> DEMO</span></header>
+  <section class="machine" aria-label="Аркада G-Energy ЗОРБ">
+    <div class="hud">
+      <canvas id="brand" width="88" height="19" aria-label="Пиксельный логотип G-Drive" role="img"></canvas>
+      <div class="score"><small>БАЛЛЫ</small><strong id="score">00000</strong></div>
+      <div class="time"><small>ОСТАЛОСЬ</small><strong><span id="seconds">45</span><span class="unit"> СЕК</span></strong><div class="time-track"><i id="time-fill"></i></div></div>
+      <button id="pause" class="pause" aria-label="Пауза" disabled>Ⅱ</button>
+    </div>
+    <div class="stage" id="stage">
+      <canvas id="game" width="480" height="270" tabindex="0" role="img" aria-label="Городская гонка: оранжевый автомобиль обгоняет машины в прозрачных зорбах"></canvas>
+      <div class="scanlines" aria-hidden="true"></div>
+      <section class="overlay intro" id="intro" aria-labelledby="intro-title">
+        <span class="eyebrow">G-ENERGY / ПИКСЕЛЬНАЯ АРКАДА</span><h1 id="intro-title">ВЫБЕРИ<br><em>СВОБОДУ</em></h1>
+        <p>Обгоняй. Лопай зорбы.<br>Набирай баллы.</p>
+        <button id="start" class="primary">НАЧАТЬ ЗАЕЗД <span>→</span></button><small class="round-note">45 СЕКУНД · ОДИН ГОРОД · ТВОЙ РЕЗУЛЬТАТ</small>
+      </section>
+      <section class="overlay paused" id="paused" hidden aria-labelledby="pause-title"><span class="eyebrow">ПИТ-СТОП</span><h2 id="pause-title">ПАУЗА</h2><button id="resume" class="primary">ПРОДОЛЖИТЬ →</button></section>
+    </div>
+    <div class="controls" aria-label="Управление автомобилем">
+      <div class="movement"><button data-control="left" aria-label="Назад, замедлить обгон"><b>←</b><span>НАЗАД</span></button><button data-control="right" aria-label="Вперёд, ускорить обгон"><b>→</b><span>ВПЕРЁД</span></button></div>
+      <p class="control-note"><span>СВОБОДА В КАЖДОЙ ПОЕЗДКЕ</span><small>← → / A D — движение <i>·</i> R / F / пробел — лопнуть зорб</small></p>
+      <button data-control="attack" class="attack" aria-label="Лопнуть зорб"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M16 3h8v9l8-5 4 7-8 5 9 3-3 8-9-4v11h-8V26l-9 5-4-7 9-5-9-4 4-7 8 5Z"/></svg><span>ЛОПНУТЬ</span></button>
+    </div>
+  </section>
+  <section id="results" class="results" hidden aria-labelledby="result-title">
+    <div class="result-summary"><span class="eyebrow">ФИНИШ / 45 СЕКУНД</span><h2 id="result-title">СВОБОДА<br><em>НАБРАНА.</em></h2><strong id="final-score">0</strong><span class="result-unit">БАЛЛОВ</span><p>Лопнуло зорбов: <b id="popped">0</b></p><button id="replay" class="primary">ЕЩЁ ОДИН ЗАЕЗД →</button></div>
+
+  </section>
+  <footer><span>ЛОПАЙ СОМНЕНИЯ. ЛОВИ ДРАЙВ.</span><span class="footer-detail">G-ENERGY ЗОРБ <b>© 2026</b></span></footer>
+</main><script type="module" src="game.js"></script>
+</body></html>
